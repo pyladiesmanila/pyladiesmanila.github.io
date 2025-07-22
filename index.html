@@ -22,22 +22,22 @@
     header {
       background: var(--pink-dark);
       color: white;
-      padding: 2rem;
+      padding: 2rem 1rem;
       text-align: center;
     }
 
     header h1 {
       margin: 0;
-      font-size: 2.5rem;
+      font-size: 2rem;
     }
 
     header p {
       margin-top: 0.5rem;
-      font-size: 1.2rem;
+      font-size: 1rem;
     }
 
     section {
-      padding: 2rem;
+      padding: 2rem 1rem;
       background: white;
       margin: 2rem auto;
       max-width: 1000px;
@@ -47,18 +47,25 @@
 
     h2 {
       color: var(--pink-dark);
+      font-size: 1.5rem;
+    }
+
+    .table-responsive {
+      overflow-x: auto;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 1rem;
+      min-width: 700px;
     }
 
     th, td {
       padding: 1rem;
       border: 1px solid #ddd;
       text-align: left;
+      vertical-align: top;
     }
 
     th {
@@ -70,7 +77,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 2rem;
+      flex-wrap: wrap;
+      gap: 1.5rem;
       margin-top: 1rem;
     }
 
@@ -85,11 +93,30 @@
       padding: 1rem;
       font-size: 0.9rem;
     }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      header p {
+        font-size: 0.95rem;
+      }
+
+      section {
+        padding: 1.5rem 1rem;
+      }
+
+      th, td {
+        padding: 0.75rem;
+        font-size: 0.95rem;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
-    <img src="pyladiesmanila-logo.png" alt="PyLadies Manila Logo" class="nav-logo" />
+    <img src="pyladiesmanila-logo.png" alt="PyLadies Manila Logo" class="nav-logo" style="max-height: 80px; margin-bottom: 1rem;" />
     <h1>PyLadies Manila Events - 2025</h1>
     <p>Celebrating Python, Diversity, and Empowerment</p>
     <p>PyLadies Manila is a women's mentorship group focused on leadership and active involvement in the Python open-source community.</p>
@@ -97,53 +124,47 @@
 
   <section>
     <h2>Event Calendar</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Event Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Date and Time</th>
-          <th>Venue</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>PyLadies Manila Workshop - Dry-run</td>
-          <td>Upskilling</td>
-          <td>Dry-run for "Own the Cloud: PyLadies Power-Up with Python & AWS"</td>
-          <td>Aug 3, 2025 (Saturday)<br />1:00 PM - 6:00 PM</td>
-          <td>Solace Hotel, Makati</td>
-        </tr>
-        <tr>
-          <td>Own the Cloud: PyLadies Power-Up with Python & AWS</td>
-          <td>Workshop</td>
-          <td>A full-day workshop designed to strengthen your foundations in tech and spark your cloud development journey.<br /><br />You’ll dive into the basics of Python programming, explore essential cloud concepts, and learn how to build cloud-based APIs using Domain-Driven Design in AWS—all in one empowering, hands-on session.</td>
-          <td>Aug 23, 2025 (Saturday)<br />8:00 AM - 6:00 PM</td>
-          <td>DLSU Dr. Andrew Tan Data Science Institute,<br />McKinley Hill Dr., Taguig.</td>
-        </tr>
-        <tr>
-          <td>PyLadies Manila Coffee Hangout</td><td>Mentorship</td>
-          <td>We'll share our personal journeys and challenges as women in tech — a chance to connect, swap stories, and find support in the Python community.</td>
-          <td>Dec 6, 2025<br /><span style='background: #ffc107; color: #000; padding: 0.2em 0.5em; border-radius: 4px;'>Tentative</span></td>
-          <td>Venue: TBA</td></tr>
-        <tr>
-          <td>PyLadiesCon 2025 Watch Party</td><td>Watch Party</td>
-          <td>A Watch Party for PyLadiesCon 2025! Let’s chat about our favorite talks, speakers, role models — and the Python libraries and tools we love.</td>
-          <td>Dec 5-7, 2025 (Friday-Sunday)<br /><span style='background: #ffc107; color: #000; padding: 0.2em 0.5em; border-radius: 4px;'>Tentative</span></td>
-          <td>Venue: TBA</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-
-<!--   <section>
-    <h2>Sponsored by</h2>
-    <div class="sponsor-logos">
-      <img src="https://a0.awsstatic.com/libra-css/images/logos/aws_smile-header-desktop-en-white_59x35.png" alt="AWS logo" />
-      <img src="https://www.dlsu.edu.ph/wp-content/uploads/2021/05/dsi_logo.png" alt="DLSU Andrew Tan DSI logo" />
+    <div class="table-responsive">
+      <table>
+        <thead>
+          <tr>
+            <th>Event Name</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Date and Time</th>
+            <th>Venue</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>PyLadies Manila Workshop - Dry-run</td>
+            <td>Upskilling</td>
+            <td>Dry-run for "Own the Cloud: PyLadies Power-Up with Python & AWS"</td>
+            <td>Aug 3, 2025 (Saturday)<br />1:00 PM - 6:00 PM</td>
+            <td>Solace Hotel, Makati</td>
+          </tr>
+          <tr>
+            <td>Own the Cloud: PyLadies Power-Up with Python & AWS</td>
+            <td>Workshop</td>
+            <td>A full-day workshop designed to strengthen your foundations in tech and spark your cloud development journey.<br /><br />You’ll dive into the basics of Python programming, explore essential cloud concepts, and learn how to build cloud-based APIs using Domain-Driven Design in AWS—all in one empowering, hands-on session.</td>
+            <td>Aug 23, 2025 (Saturday)<br />8:00 AM - 6:00 PM</td>
+            <td>DLSU Dr. Andrew Tan Data Science Institute,<br />McKinley Hill Dr., Taguig.</td>
+          </tr>
+          <tr>
+            <td>PyLadies Manila Coffee Hangout</td><td>Mentorship</td>
+            <td>We'll share our personal journeys and challenges as women in tech — a chance to connect, swap stories, and find support in the Python community.</td>
+            <td>Dec 6, 2025<br /><span style='background: #ffc107; color: #000; padding: 0.3em 0.6em; border-radius: 4px;'>Tentative</span></td>
+            <td>Venue: TBA</td></tr>
+          <tr>
+            <td>PyLadiesCon 2025 Watch Party</td><td>Watch Party</td>
+            <td>A Watch Party for PyLadiesCon 2025! Let’s chat about our favorite talks, speakers, role models — and the Python libraries and tools we love.</td>
+            <td>Dec 5-7, 2025 (Friday-Sunday)<br /><span style='background: #ffc107; color: #000; padding: 0.3em 0.6em; border-radius: 4px;'>Tentative</span></td>
+            <td>Venue: TBA</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-  </section> -->
+  </section>
 
   <footer>
     &copy; 2025 PyLadies Manila. All rights reserved.
